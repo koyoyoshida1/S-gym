@@ -1,0 +1,1619 @@
+/* =========================================
+   2. Common Parts (共通パーツ)
+========================================= */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-top: 30px;
+}
+
+.section-header .bg-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(32px, 10vw, 100px);
+    color: rgba(0, 0, 0, 0.03);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    z-index: 0;
+}
+
+.section-title {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(18px, 5vw, 32px);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-color); /* 赤に変更 */
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* =========================================
+    4. Hero Section (ファーストビュー)
+========================================= */
+.hero {
+    position: relative;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #111;
+    padding-top: 60px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/fv.webp') center/cover no-repeat;
+    z-index: 0;
+}
+
+/* ★修正：SP/PC統一の暗幕グラデーション */
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%) !important;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* ★修正：好評の「白いシャドウ」復活！（黒フチ＋白光彩のハイブリッド） */
+.hero-content * {
+    text-shadow: 
+        1px 1px 0 #000, 
+        -1px -1px 0 #000,
+        1px -1px 0 #000, 
+        -1px 1px 0 #000,
+        0 4px 15px rgba(255, 255, 255, 0.7), 
+        0 0 40px rgba(255, 255, 255, 0.5);
+}
+
+.hero-catch-sub {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.hero-catch-main {
+    font-size: clamp(20px, 6vw, 40px);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    color: #fff;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.hero-title {
+    font-size: clamp(24px, 7vw, 64px);
+    font-weight: 900;
+    line-height: 1.35;
+    margin-bottom: 35px;
+    color: #fff;
+}
+
+.hero-title span {
+    color: var(--primary-color);
+}
+
+.hero-logo-img {
+    height: clamp(35px, 9vw, 55px);
+    width: auto;
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-brand {
+    position: relative;
+    margin-top: 15px; 
+}
+
+.hero-brand h2 {
+    font-size: clamp(48px, 12vw, 100px); 
+    line-height: 0.9;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.01em;
+    /* ロゴにも白い光彩を追加 */
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4)); 
+    text-transform: capitalize; 
+}
+
+.hero-brand h2 span {
+    color: var(--primary-color);
+    /* オレンジ文字にも同色の光彩を追加 */
+    filter: drop-shadow(0 0 10px var(--primary-color));
+}
+
+.hero-ruby {
+    display: block;
+    font-size: clamp(14px, 2.5vw, 18px); 
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 0.5em; 
+    margin-top: 15px;
+    padding-left: 5px;
+}
+
+/* =========================================
+   修正箇所1：全体のテキストシャドウ
+========================================= */
+/* ★修正：白く広がりすぎた影を抑え、重厚感のある黒シャドウへ変更 */
+.hero-content * {
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.8), /* 輪郭を少し馴染ませる */
+        0 4px 10px rgba(0, 0, 0, 0.9),  /* 文字のすぐ裏に落ちる濃い影 */
+        0 10px 30px rgba(0, 0, 0, 0.7); /* 全体を背景に落ち着かせる影 */
+}
+
+
+/* =========================================
+   修正箇所2：ブランドロゴ（S-Gym）の影
+========================================= */
+.hero-brand h2 {
+    font-size: clamp(48px, 12vw, 100px); 
+    line-height: 0.9;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.01em;
+    /* ★修正：白い光彩が浮く原因になるため、自然な黒い影に変更 */
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.6)); 
+    text-transform: capitalize; 
+}
+
+
+/* =========================================
+   修正箇所3：ロゴのオレンジ部分（S）の影
+========================================= */
+.hero-brand h2 span {
+    color: var(--primary-color);
+    /* ★修正：強すぎた光を抑え、オレンジ色でじんわりと馴染ませる */
+    filter: drop-shadow(0 0 15px rgba(255, 87, 34, 0.4));
+}
+
+
+/* =========================================
+   5. Concept Movie (動画セクション)
+========================================= */
+.concept-movie {
+    padding: 40px 20px 20px;
+    background-color: var(--bg-base);
+}
+
+.movie-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 3px solid #fff;
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border: none;
+}
+
+.dummy-video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://img.youtube.com/vi/SGp6tvWLYSo/maxresdefault.jpg') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.dummy-video::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.play-btn {
+    position: relative;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color); /* 赤に変更 */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    padding-left: 4px; 
+    box-shadow: 0 5px 15px rgba(230, 0, 18, 0.4); /* 赤い影に変更 */
+    transition: transform 0.2s;
+}
+
+.dummy-video:hover .play-btn {
+    transform: scale(1.1);
+}
+
+.movie-caption {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 13px;
+}
+
+.movie-cta-wrap {
+    margin-top: 50px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.movie-cta-lead {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--primary-color); /* 赤に変更 */
+    margin-bottom: 15px;
+    letter-spacing: 0.05em;
+}
+
+.btn-primary {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* ジムらしい力強い赤グラデーションに変更 */
+    background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 40px 20px;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(230, 0, 18, 0.4); /* 赤い影 */
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(230, 0, 18, 0.5);
+}
+
+.btn-primary .btn-sub {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -60%; width: 20%; height: 200%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(45deg);
+    animation: btnShine 3s infinite;
+}
+
+/* =========================================
+    7. Comparison (比較セクション)
+========================================= */
+.comparison {
+    padding: 80px 20px;
+    background: #fff;
+}
+
+.comp-table-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    min-width: 500px;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 700;
+}
+
+th {
+    background-color: #f1f3f5;
+    color: var(--text-muted);
+}
+
+.col-sphoto {
+    color: var(--primary-color); /* 赤に変更 */
+    font-size: 16px;
+    background-color: #fff2f2; /* 薄い赤に変更 */
+    border-bottom: 2px solid var(--primary-color) !important;
+}
+
+.sphoto-cell {
+    background-color: #fff2f2; /* 薄い赤に変更 */
+    color: var(--text-main);
+    border-left: 1px solid rgba(230, 0, 18, 0.2); /* 赤のボーダー */
+    border-right: 1px solid rgba(230, 0, 18, 0.2);
+}
+
+/* =========================================
+   8. Features (特徴セクション)
+========================================= */
+.features {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.feature-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    background: var(--bg-surface);
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    position: relative;
+}
+
+.feature-img {
+    width: 100%;
+    height: 250px;
+    overflow: hidden; 
+    border-radius: 16px 16px 0 0;
+}
+
+.feature-img img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+.feature-content {
+    padding: 30px 20px;
+    position: relative;
+}
+
+.feature-num {
+    position: absolute;
+    top: 10px; right: 20px;
+    font-size: 60px; font-weight: 700;
+    color: rgba(230, 0, 18, 0.08); /* うっすら赤 */
+    line-height: 1; z-index: 0;
+    pointer-events: none; 
+}
+
+.feature-point-title {
+    font-size: 20px; font-weight: 900; margin-bottom: 15px;
+    color: var(--text-main); line-height: 1.4;
+    position: relative; z-index: 1;
+}
+
+.feature-desc p {
+    font-size: 14px; color: var(--text-muted);
+    line-height: 1.6; position: relative; z-index: 1;
+}
+
+.feature-extra {
+    max-width: 800px; margin: 60px auto 0;
+}
+
+.extra-card {
+    display: flex; flex-direction: column;
+    background: #fff; 
+    border: 2px dashed var(--primary-color); /* 赤点線 */
+    border-radius: 20px; position: relative;
+}
+
+.extra-img-wrap {
+    width: 100%; height: 220px; position: relative;
+    border-radius: 18px 18px 0 0; overflow: hidden; 
+}
+
+.extra-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+.extra-modte-badge {
+    position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%);
+    background: #E60012; color: #fff; font-size: 14px; font-weight: 900;
+    padding: 8px 20px; border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(230, 0, 18, 0.4); z-index: 5; white-space: nowrap;
+}
+
+.extra-content { padding: 45px 20px 30px; }
+
+.extra-badge {
+    display: inline-block;
+    background: var(--primary-color); /* 赤 */
+    color: #fff; font-family: 'Oswald', sans-serif;
+    padding: 3px 10px; font-size: 11px; font-weight: 700;
+    border-radius: 4px; margin-bottom: 10px;
+}
+
+/* =========================================
+   9. Voices (参加メンバーのリアルな声)
+========================================= */
+.voices {
+    padding: 80px 20px;
+    background-color: var(--bg-surface, #f9f9f9);
+}
+
+.voice-grid {
+    max-width: 1000px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.voice-card {
+    background: #fff; padding: 30px 25px; border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05); position: relative;
+    border: 1px solid #f0f0f0; transition: transform 0.3s;
+}
+
+.voice-card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08); }
+
+.voice-card::before {
+    content: '“'; position: absolute; top: 10px; left: 20px;
+    font-size: 80px; font-family: Georgia, serif;
+    color: rgba(230, 0, 18, 0.08); /* 赤色に変更 */
+    line-height: 1; z-index: 0;
+}
+
+.voice-header {
+    display: flex; align-items: center; gap: 15px; margin-bottom: 20px;
+    padding-bottom: 15px; border-bottom: 1px dashed #eee; position: relative; z-index: 1;
+}
+
+.voice-avatar {
+    width: 60px; height: 60px; border-radius: 50%; overflow: hidden;
+    background-color: #eee; flex-shrink: 0;
+}
+
+.voice-avatar img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: blur(4px) brightness(1.1); transform: scale(1.1); 
+}
+
+.voice-meta { display: flex; flex-direction: column; gap: 5px; }
+.voice-stars { color: #ffb400; font-size: 14px; letter-spacing: 2px; }
+.voice-user { font-size: 13px; font-weight: 900; color: #333; margin: 0; }
+
+.voice-text { font-size: 15px; font-weight: 500; color: #444; line-height: 1.8; position: relative; z-index: 1; margin: 0; }
+
+.voice-text .highlight {
+    font-weight: 900; color: #000;
+    /* オレンジからジム向けの赤系マーカーに変更 */
+    background: linear-gradient(transparent 50%, rgba(230, 0, 18, 0.3) 50%);
+}
+
+/* =========================================
+   12. Flow (参加後の流れ)
+========================================= */
+.contents { background-color: #fff; padding: 80px 20px; }
+.flow-wrap { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; }
+.flow-step {
+    background: var(--bg-surface); border-radius: 16px; overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); display: flex; flex-direction: column;
+}
+
+.flow-img { width: 100%; height: 250px; background-color: #f1f3f5; display: flex; justify-content: center; align-items: center; }
+.flow-img img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.flow-text { padding: 25px 20px; }
+
+.step-label {
+    display: inline-block; font-family: 'Oswald', sans-serif; color: #fff;
+    background-color: var(--primary-color); /* 赤 */
+    padding: 4px 16px; border-radius: 20px; font-size: 14px;
+    letter-spacing: 0.1em; margin-bottom: 12px; font-weight: 700;
+}
+
+.flow-text h3 { font-size: 18px; margin-bottom: 15px; line-height: 1.4; color: var(--text-main); }
+.flow-text p { color: var(--text-muted); font-weight: 500; font-size: 14px; line-height: 1.6; }
+
+/* =========================================
+    13. FAQ (よくある質問)
+========================================= */
+.faq { padding: 80px 20px; max-width: 800px; margin: 0 auto; background: #fff; }
+.faq-item { margin-bottom: 15px; background: var(--bg-surface); border-radius: 8px; overflow: hidden; }
+
+.faq-q { padding: 20px; font-weight: 700; font-size: 15px; display: flex; align-items: flex-start !important; }
+.faq-q::before {
+    content: 'Q.'; font-family: 'Oswald', sans-serif;
+    color: var(--primary-color); /* 赤 */
+    font-size: 20px; margin-right: 15px; line-height: 1.4; margin-top: -2px;
+}
+
+.faq-a { padding: 0 20px 20px 20px; color: var(--text-muted); font-size: 14px; display: flex; align-items: flex-start !important; font-weight: 500; }
+.faq-a::before { content: 'A.'; font-family: 'Oswald', sans-serif; color: #ccc; font-size: 20px; margin-right: 15px; line-height: 1.4; margin-top: -2px; }
+
+/* =========================================
+    14. CTA (購入エリア)
+========================================= */
+.cta {
+    padding: 100px 20px; text-align: center;
+    /* 全体に馴染む、うっすらとしたシルバー〜淡い赤グラデーション */
+    background: linear-gradient(135deg, #fcfcfc 0%, #fff2f2 100%);
+    color: #333; position: relative; overflow: hidden;
+}
+
+.cta::before {
+    content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(230, 0, 18, 0.05) 0%, transparent 70%); /* 赤いオーラ */
+    pointer-events: none; z-index: 0;
+}
+
+.cta-inner { position: relative; z-index: 10; max-width: 800px; margin: 0 auto; }
+.cta-lead { color: var(--primary-color); font-weight: 900; letter-spacing: 0.1em; margin-bottom: 15px; font-size: clamp(14px, 3vw, 16px); }
+.cta-title { font-size: clamp(28px, 6vw, 42px); font-weight: 900; margin-bottom: 50px; line-height: 1.3; color: #000; }
+
+.price-box {
+    background: #fff;
+    border: 2px solid rgba(230, 0, 18, 0.1); /* 赤いフチ */
+    padding: 40px 20px; border-radius: 16px; max-width: 400px; margin: 0 auto 50px;
+    box-shadow: 0 15px 35px rgba(230, 0, 18, 0.08); /* 赤い影 */
+}
+
+.price-label { font-size: 14px; font-weight: 900; letter-spacing: 0.1em; color: var(--primary-color); margin-bottom: 15px; }
+.price-main { font-size: 18px; font-weight: 900; display: flex; justify-content: center; align-items: baseline; gap: 5px; color: #000; }
+
+.price-number {
+    font-size: 64px; color: var(--primary-color); /* 赤 */
+    line-height: 1; font-family: 'Oswald', sans-serif;
+    text-shadow: 0 4px 10px rgba(230, 0, 18, 0.2); 
+}
+
+.price-sub { font-size: 13px; color: #666; font-weight: 700; margin-top: 15px; letter-spacing: 0.05em; }
+
+.btn-lrg {
+    display: inline-flex; flex-direction: column; justify-content: center; align-items: center;
+    background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%); /* ジム用の強い赤 */
+    color: #fff; text-decoration: none; padding: 20px 40px; border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(230, 0, 18, 0.4); transition: all 0.3s ease;
+    width: 100%; max-width: 500px; margin: 0 auto; position: relative; overflow: hidden;
+    font-size: 24px; font-weight: 900; letter-spacing: 0.05em;
+}
+
+.btn-lrg:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 40px rgba(230, 0, 18, 0.6); }
+.btn-lrg .btn-sub { font-size: 13px; font-weight: 700; margin-bottom: 5px; opacity: 0.9; }
+
+.btn-lrg::after {
+    content: ''; position: absolute; top: -50%; left: -60%; width: 20%; height: 200%;
+    background: rgba(255, 255, 255, 0.4); transform: rotate(45deg); animation: btnShine 3s infinite;
+}
+
+.cta-note { margin-top: 25px; font-size: 14px; color: #888; font-weight: 700; }
+
+/* =========================================
+    15. Footer (フッター)
+========================================= */
+.footer { background-color: var(--bg-surface); padding: 60px 20px 40px; border-top: 1px solid var(--border-color); text-align: center; }
+.footer-inner { max-width: 1000px; margin: 0 auto; }
+.footer-logo { margin: 0 auto 30px auto; display: inline-block; }
+.footer-logo a { display: block; }
+.footer-logo img { height: 36px; width: auto; margin: 0 auto; display: block; filter: grayscale(100%) opacity(0.7); transition: all 0.3s ease; }
+.footer-logo a:hover img { filter: grayscale(0%) opacity(1); }
+.footer-menu { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px 30px; margin-bottom: 40px; }
+.footer-menu a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; transition: color 0.3s ease; }
+.footer-menu a:hover { color: var(--primary-color); } /* 赤に変更 */
+.footer-copyright { color: #aaaaaa; font-size: 12px; letter-spacing: 0.1em; }
+
+/* =========================================
+16. Media Queries (PC用レイアウト・レスポンシブ一括設定)
+========================================= */
+@media (min-width: 768px) {
+    .section-header .bg-text { font-size: clamp(50px, 10vw, 100px); }
+    .section-title { font-size: clamp(24px, 5vw, 32px); }
+    .header-inner { padding: 15px 40px; }
+    .header-logo img { height: 44px; }
+    .header-nav { display: block; }
+    .header-btn { display: inline-block; }
+    .hamburger { display: none; }
+    .mobile-nav { display: none !important; }
+    
+    .hero-content { text-align: center; }
+    .hero-bg::after { background: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 100%); }
+    .hero-logo-img { height: 55px; margin: 0 auto; }
+    .hero-catch-main { font-size: 40px; }
+    .hero-title { font-size: 64px; }
+
+    .problems { padding: 80px 20px; }
+    .marker { padding: 0 4px; }
+
+    /* Features 関連 PC */
+    .feature-row { flex-direction: row; background: transparent; box-shadow: none; align-items: center; gap: 60px; margin-bottom: 120px; }
+    .feature-row:nth-child(even) { flex-direction: row-reverse; }
+    .feature-img { width: 50%; height: 380px; border-radius: 24px; box-shadow: 0 15px 45px rgba(0,0,0,0.1); }
+    .feature-content { width: 50%; padding: 0; }
+    .feature-num { font-size: 140px; top: -50px; left: -30px; right: auto; }
+    .feature-row:nth-child(even) .feature-num { left: auto; right: -30px; }
+    .feature-point-title { font-size: 28px; margin-bottom: 25px; }
+    .feature-desc p { font-size: 16px; }
+    .feature-extra { max-width: 900px; margin-top: 100px; }
+    .extra-card { flex-direction: row; align-items: stretch; text-align: left; }
+    .extra-img-wrap { width: 40%; height: auto; min-height: 300px; border-radius: 18px 0 0 18px; }
+    .extra-modte-badge { bottom: 30px; right: -25px; left: auto; transform: none; }
+    .extra-content { width: 60%; padding: 50px 60px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+
+    /* Flow 関連 PC */
+    .flow-wrap { gap: 60px; }
+    .flow-step { flex-direction: row; align-items: center; background: transparent; box-shadow: none; }
+    .flow-step:nth-child(even) { flex-direction: row-reverse; }
+    .flow-img { width: 45%; height: 300px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+    .flow-text { width: 55%; padding: 0 40px; }
+    .flow-text h3 { font-size: 22px; }
+    .flow-text p { font-size: 15px; }
+
+    .feature-grid { grid-template-columns: repeat(3, 1fr); }
+    .voice-grid { grid-template-columns: repeat(2, 1fr); }
+    .instructor-grid { grid-template-columns: repeat(2, 1fr); }
+
+    table { font-size: 16px; }
+    th, td { padding: 20px 15px; }
+    .col-sphoto { font-size: 20px; }
+
+    .btn { display: inline-block; width: auto; padding: 20px 60px; font-size: 18px; }
+    .price-box { font-size: 20px; padding: 30px 60px; }
+    .price-box span { font-size: 64px; }
+    
+    .footer { padding: 80px 40px 40px; }
+    .footer-logo img { height: 44px; }
+    .footer-menu { gap: 40px; }
+}
+
+@media screen and (max-width: 767px) {
+    .problem-list { -webkit-overflow-scrolling: touch; }
+    .comp-table-wrap { -webkit-overflow-scrolling: touch; }
+    .movie-cta-lead { font-size: 14px; line-height: 1.6; }
+    .btn-primary { font-size: 18px; padding: 12px 20px 15px; }
+    .btn-primary .btn-sub { font-size: 11px; }
+
+    /* スマホ表示の細かいズレ・余白修正 */
+    .btn-lrg { padding: 15px 20px; font-size: 20px; }
+    .btn-lrg .btn-sub { font-size: 11px; line-height: 1.4; }
+    .voice-card { padding: 25px 20px; }
+    .section-title { font-size: 22px !important; line-height: 1.4; }
+    .movie-catch { font-size: 18px !important; }
+    .sp-br { display: block; }
+}
+
+.sp-br { display: none; }
+.instructor-img { flex-shrink: 0 !important; }
+
+/* =========================================
+   3. Header & Navigation (ヘッダー)
+========================================= */
+
+/* --- ヘッダーのベース（すりガラス・固定） --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* 今風のすりガラスエフェクト */
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* --- 左側：ロゴ画像 --- */
+.header-logo {
+    margin: 0;
+    margin-right: auto;
+    line-height: 1;
+}
+
+.header-logo img {
+    height: 75px;
+    width: auto;
+    display: block;
+}
+
+/* --- 中央：PC用ナビメニュー --- */
+.header-nav {
+    margin-right: 30px;
+}
+
+.header-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-main, #333);
+    letter-spacing: 0.05em;
+    padding-bottom: 5px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* ホバー時の赤みオレンジ下線アニメーション */
+.header-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color, #ff4d00); /* 赤みオレンジに変更 */
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+.header-nav a:hover {
+    color: var(--primary-color, #ff4d00); /* 赤みオレンジに変更 */
+}
+
+.header-nav a:hover::after {
+    width: 100%;
+}
+
+/* --- 右側：サロンへ入会するボタン --- */
+.header-btn {
+    background: var(--primary-color, #ff4d00); /* 赤みオレンジに変更 */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 77, 0, 0.3); /* 影も赤みオレンジに */
+}
+
+.header-btn:hover {
+    background: #e63e00; /* ホバー時は少しだけ暗い赤みオレンジ */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 77, 0, 0.4);
+}
+
+/* --- ハンバーガーボタン（PCでは非表示） --- */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 1001;
+    padding: 0;
+}
+
+.hamburger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger span:nth-of-type(1) { top: 0; }
+.hamburger span:nth-of-type(2) { top: 9px; }
+.hamburger span:nth-of-type(3) { bottom: 0; }
+
+/* --- モバイルナビ（PCでは非表示） --- */
+.mobile-nav {
+    display: none;
+}
+
+/* =========================================
+   スマホ用レスポンシブ（767px以下）
+========================================= */
+@media (max-width: 767px) {
+    .header-inner {
+        max-width: none;
+        padding: 8px 14px 8px 6px;
+    }
+
+    .header-logo {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .header-logo img {
+        height: 40px;
+    }
+
+    .header-nav { display: none; }
+    .header-btn { display: none; }
+    .hamburger { display: block; }
+
+    .mobile-nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        padding-top: 100px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+
+    .mobile-nav.is-active {
+        transform: translateX(0);
+    }
+
+    .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .mobile-nav li {
+        margin-bottom: 30px;
+    }
+
+    .mobile-nav a {
+        color: #333;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .hamburger.is-active span:nth-of-type(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.is-active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .hamburger.is-active span:nth-of-type(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+body.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+/* =========================================
+    6. Problems (お悩みセクション)
+========================================= */
+.problems {
+    padding: 60px 20px;
+    background-color: var(--bg-surface);
+    position: relative;
+    text-align: center;
+}
+
+.problem-wrap {
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.problem-list {
+    list-style: none;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+
+.problem-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--primary-color, #ff4d00); /* 赤みオレンジに変更 */
+}
+
+.problem-list li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+}
+
+.problem-list li:last-child {
+    margin-bottom: 0;
+}
+
+.problem-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 22px;
+    height: 22px;
+    background-color: #fff2ee; /* 赤みオレンジに合う薄い背景色 */
+    border-radius: 50%;
+    border: 2px solid var(--primary-color, #ff4d00); /* 赤みオレンジに変更 */
+}
+
+.problem-list li::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 9px;
+    width: 5px;
+    height: 10px;
+    border-right: 2px solid var(--primary-color, #ff4d00); /* 赤みオレンジに変更 */
+    border-bottom: 2px solid var(--primary-color, #ff4d00); /* 赤みオレンジに変更 */
+    transform: rotate(45deg);
+}
+
+.marker {
+    /* マーカーの色も赤みオレンジに（rgba値で透過） */
+    background: linear-gradient(transparent 60%, rgba(255, 77, 0, 0.3) 60%);
+    display: inline;
+    padding: 0 2px;
+}
+
+.problem-solution {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -10px;
+    position: relative;
+    z-index: 2;
+}
+
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 25px solid #fff;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.06));
+}
+
+.solution-sub {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    letter-spacing: 0.1em;
+}
+
+.solution-main {
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 900;
+    color: var(--text-main);
+    letter-spacing: 0.05em;
+}
+
+.solution-main span {
+    color: var(--primary-color, #ff4d00); /* 赤みオレンジに変更 */
+    font-size: 1.3em;
+    display: inline-block;
+    margin: 0 5px;
+    text-shadow: 0 2px 10px rgba(255, 77, 0, 0.2); /* 影も赤みオレンジに */
+}
+
+/* =========================================
+   Coming Soon動画エリア
+========================================= */
+.coming-soon-wrap {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: #111; /* ジムらしい黒 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coming-soon-text {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(24px, 6vw, 48px);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    /* 赤みオレンジのネオン風の光でカッコよく */
+    text-shadow: 0 0 20px rgba(255, 77, 0, 0.6); 
+}
+
+/* =========================================
+   10. Before/After (変化セクション)
+========================================= */
+.before-after {
+    padding: 80px 20px;
+    background-color: #111; /* ジムらしく黒背景でバキッと見せる */
+    color: #fff;
+    overflow: hidden;
+}
+
+/* 黒背景なのでタイトル文字を白に上書き */
+.before-after .section-title {
+    color: #fff;
+}
+
+.swipe-hint {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite; /* ふわふわ点滅してスワイプを促す */
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.ba-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory; /* スワイプでピタッと止まる */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* スクロールバーを隠す（スマホで綺麗に見せるため） */
+.ba-slider::-webkit-scrollbar { display: none; }
+
+.ba-slide {
+    flex: 0 0 85%; /* スマホ時は画面の85%の幅 */
+    max-width: 500px;
+    scroll-snap-align: center;
+    background: #222; /* ダークグレーのカード */
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.ba-images {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.ba-box {
+    flex: 1;
+    position: relative;
+}
+
+.ba-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--primary-color, #ff4d00); /* 赤みオレンジ */
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    z-index: 2;
+    font-family: 'Oswald', sans-serif;
+}
+
+.ba-box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.ba-text {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* =========================================
+   11. Instructor (運営メンバー)
+========================================= */
+.instructor {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.instructor-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.instructor-card {
+    background: var(--bg-surface);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.instructor-img {
+    width: 100%;
+    height: 350px;
+}
+
+.instructor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center; /* 顔が見切れないように上揃え */
+}
+
+.instructor-info {
+    padding: 30px 25px;
+}
+
+.instructor-role {
+    color: var(--primary-color, #ff4d00);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.instructor-name {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+/* 実績リストのチェックマーク */
+.instructor-desc {
+    list-style: none;
+    padding: 0;
+}
+
+.instructor-desc li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.instructor-desc li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color, #ff4d00);
+    font-weight: 900;
+}
+
+/* Before/After PC版 */
+    .ba-slider {
+        justify-content: center; /* PCなら中央寄せ */
+    }
+    .ba-slide {
+        flex: 0 0 45%; /* PCなら2列くらいで並ぶサイズ感 */
+    }
+    .ba-box img {
+        height: 350px; /* PCなら画像を少し縦長に見せる */
+    }
+
+/* =========================================
+   10. Before/After (変化セクション) - SP最適化版
+========================================= */
+.before-after {
+    padding: 80px 20px;
+    background-color: #111; /* ジムらしく黒背景でバキッと見せる */
+    color: #fff;
+    overflow: hidden;
+}
+
+/* 黒背景なのでタイトル文字を白に上書き */
+.before-after .section-title {
+    color: #fff;
+}
+
+.swipe-hint {
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 20px;
+    font-weight: 700;
+    animation: pulse 2s infinite; /* ふわふわ点滅してスワイプを促す */
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.ba-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* 横スワイプを有効に */
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory; /* スワイプでピタッと止まる */
+    -webkit-overflow-scrolling: touch; /* iOS Safari用なめらかスクロール */
+}
+
+/* スクロールバーを隠す（スマホで綺麗に見せるため） */
+.ba-slider::-webkit-scrollbar { display: none; }
+
+.ba-slide {
+    flex: 0 0 85%; /* スマホ時は画面の85%の幅でカードを表示 */
+    max-width: 450px; /* PCでの最大幅 */
+    scroll-snap-align: center;
+    background: #222; /* ダークグレーのカード */
+    border-radius: 12px;
+    padding: 15px;
+}
+
+/* ▼▼▼ スマホ最適化： Before と After を縦並びに ▼▼▼ */
+.ba-images {
+    display: flex;
+    flex-direction: column; /* スマホでは縦並び */
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.ba-box {
+    position: relative;
+    width: 100%;
+}
+
+.ba-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--primary-color, #ff4d00); /* 赤みオレンジ */
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    z-index: 2;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.ba-box img {
+    width: 100%;
+    height: auto; /* 高さは自動（画像の比率を維持） */
+    max-height: 250px; /* スマホで縦長になりすぎないよう最大高さを設定 */
+    object-fit: cover; /* 画像の比率によっては切り抜かれるが、枠いっぱいに表示 */
+    border-radius: 8px;
+}
+
+.ba-text {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #ddd;
+    padding: 0 5px;
+}
+
+/* =========================================
+   PC画面用（768px以上）のレイアウト調整
+========================================= */
+@media (min-width: 768px) {
+    .ba-slider {
+        justify-content: center; /* PCなら中央寄せ */
+    }
+
+    .ba-slide {
+        flex: 0 0 45%; /* PCなら2列くらいで並ぶサイズ感 */
+        padding: 20px;
+    }
+
+    /* PCでは横並びに戻す */
+    .ba-images {
+        flex-direction: row;
+        gap: 15px;
+    }
+    
+    .ba-box {
+        flex: 1; /* 横幅を均等に */
+    }
+
+    .ba-box img {
+        height: 350px; /* PCでは少し縦長に */
+        max-height: none; /* 最大高さを解除 */
+    }
+
+    .ba-text {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   11. Instructor (運営メンバー) - 黒背景・ストイック版
+========================================= */
+.instructor {
+    padding: 80px 20px;
+    background-color: #111; /* 背景を黒に変更 */
+    color: #fff; /* 基本テキストを白に */
+}
+
+/* セクションタイトルを白に上書き */
+.instructor .section-title {
+    color: #fff;
+}
+
+.instructor-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* カード本体をダークグレーにして引き締める */
+.instructor-card {
+    background: #222; /* 背景に溶け込みすぎないダークグレー */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* 影を暗く強めに */
+    border: 1px solid #333; /* うっすらボーダーを入れると立体感が出ます */
+}
+
+.instructor-img {
+    width: 100%;
+    height: 350px;
+}
+
+.instructor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center; /* 顔が見切れないように上揃え */
+}
+
+.instructor-info {
+    padding: 30px 25px;
+}
+
+.instructor-role {
+    color: var(--primary-color, #ff4d00); /* 赤みオレンジ */
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 0.05em;
+}
+
+.instructor-name {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #fff; /* 白文字に変更 */
+}
+
+.instructor-desc {
+    list-style: none;
+    padding: 0;
+}
+
+.instructor-desc li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #ccc; /* 読みやすい明るいグレーに変更 */
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* リストのチェックマーク */
+.instructor-desc li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color, #ff4d00); /* 赤みオレンジ */
+    font-weight: 900;
+}
+
+/* =========================================
+   11. Instructor (運営メンバー) - 通常のライトグレー背景版
+========================================= */
+.instructor {
+    padding: 80px 20px;
+    background-color: #f5f5f5; /* 普通の明るいグレーに変更 */
+    color: var(--text-main);
+}
+
+.instructor .section-title {
+    color: var(--text-main); /* タイトルも黒文字に戻す */
+}
+
+.instructor-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* カード本体：白にして浮かせる */
+.instructor-card {
+    background: #fff; /* 白いカード */
+    border-radius: 16px;
+    padding: 50px 30px 40px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05); /* 優しい影で浮かせる */
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+/* アバター画像（丸く切り抜いて光らせる） */
+.instructor-img {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    /* 後ろのオレンジの光彩（白背景に合わせて少し淡く） */
+    box-shadow: 0 0 45px rgba(255, 77, 0, 0.15);
+    border: 3px solid #fff; 
+}
+
+.instructor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.instructor-role {
+    color: var(--primary-color, #ff4d00);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+}
+
+.instructor-name {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: var(--text-main); /* 黒文字 */
+}
+
+/* 箇条書き */
+.instructor-desc {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.instructor-desc li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #444; /* 文字も濃いグレー（黒に近い色）に戻す */
+    line-height: 1.6;
+    font-weight: 700; /* 画像に合わせて少し太字に */
+}
+
+/* オレンジの丸ぽっち（ドット） */
+.instructor-desc li::before {
+    content: '●'; 
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 10px;
+    color: var(--primary-color, #ff4d00);
+}
+
+/* =========================================
+   流れセクション (Flow) の画像調整
+========================================= */
+
+.flow-img {
+    width: 50%; /* PC表示で横幅の半分を使う */
+    border-radius: 16px; /* 角丸を維持 */
+    overflow: hidden;
+    background-color: #f5f5f5; /* 画像がない・読み込み中のグレー背景 */
+    
+    /* ★修正の肝：枠の縦横比を固定する（4:3の長方形に統一） */
+    aspect-ratio: 4 / 3; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* ★修正の肝：枠の中に画像を綺麗に収める */
+.flow-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 念のためSP（スマホ）用の幅も100%に指定 */
+@media (max-width: 767px) {
+    .flow-img {
+        width: 100%;
+        /* スマホの時は少し高さを抑えたい場合は 16/9 などに変更してもOK */
+        aspect-ratio: 4 / 3; 
+    }
+}

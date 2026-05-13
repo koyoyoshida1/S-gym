@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5a623;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e94560;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orangeGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5a623;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#e94560;stop-opacity:0.25" />
+    </linearGradient>
+  </defs>
+
+  <!-- White background circle for SNS use -->
+  <circle cx="200" cy="200" r="200" fill="white"/>
+
+  <!-- Dumbbell shape -->
+  <!-- Center bar -->
+  <rect x="105" y="175" width="190" height="50" rx="10" ry="10" fill="none" stroke="#1a1a2e" stroke-width="9"/>
+
+  <!-- Left weight plate (outer) -->
+  <rect x="55" y="130" width="60" height="140" rx="14" ry="14" fill="none" stroke="#1a1a2e" stroke-width="9"/>
+
+  <!-- Left weight plate (inner/small) -->
+  <rect x="35" y="150" width="30" height="100" rx="10" ry="10" fill="none" stroke="#1a1a2e" stroke-width="9"/>
+
+  <!-- Right weight plate (outer) -->
+  <rect x="285" y="130" width="60" height="140" rx="14" ry="14" fill="none" stroke="#1a1a2e" stroke-width="9"/>
+
+  <!-- Right weight plate (inner/small) -->
+  <rect x="335" y="150" width="30" height="100" rx="10" ry="10" fill="none" stroke="#1a1a2e" stroke-width="9"/>
+
+  <!-- Orange accent circle (outer ring) -->
+  <circle cx="200" cy="200" r="58" fill="white" stroke="url(#orangeGrad)" stroke-width="8"/>
+
+  <!-- Light inner ring -->
+  <circle cx="200" cy="200" r="46" fill="none" stroke="url(#orangeGradLight)" stroke-width="4"/>
+
+  <!-- S letter - large and bold -->
+  <text x="200" y="200" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="85" fill="#1a1a2e" text-anchor="middle" dominant-baseline="central">S</text>
+</svg>
