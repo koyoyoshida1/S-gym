@@ -4,12 +4,7 @@
 <!-- ⓪ head -->
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KS00Y7PE0N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KS00Y7PE0N');
-  </script>
+  <script src="js/analytics.js"></script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,19 +18,23 @@
   <meta property="og:description" content="プロテイン1回分の価格で、あなたの体を「人生最強の状態」に。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://s-gym-salon.com/">
-  <meta property="og:image" content="https://s-gym-salon.com/img/s-gym.png?v=20260514">
-  <meta property="og:image:secure_url" content="https://s-gym-salon.com/img/s-gym.png?v=20260514">
+  <meta property="og:image" content="https://s-gym-salon.com/img/ogp-discord.jpg?v=20260624">
+  <meta property="og:image:secure_url" content="https://s-gym-salon.com/img/ogp-discord.jpg?v=20260624">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <link rel="canonical" href="https://s-gym-salon.com/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://s-gym-salon.com/img/s-gym.png?v=20260514">
+  <meta name="twitter:title" content="s-gym | 月額4,980円(税抜)でプロの指導が受け放題">
+  <meta name="twitter:description" content="プロテイン1回分の価格で、あなたの体を「人生最強の状態」に。">
+  <meta name="twitter:image" content="https://s-gym-salon.com/img/ogp-discord.jpg?v=20260624">
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;family=Oswald:wght@500;700&amp;display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/base.css?v=0514_01">
-  <link rel="stylesheet" href="css/style.css?v=0514_01">
+  <link rel="stylesheet" href="css/style.css?v=0624_02">
 </head>
 
 <body>
@@ -53,8 +52,7 @@
           <li><a href="#problems">悩み</a></li>
           <li><a href="#comparison">他社比較</a></li>
           <li><a href="#features">特徴</a></li>
-          <li><a href="#voices">メンバーの声</a></li>
-          <li><a href="#faq">Q&A</a></li>
+          <li><a href="#faq">Q&amp;A</a></li>
         </ul>
       </nav>
       <a href="https://buy.stripe.com/fZu8wRgno0hO4PQ38AcV202" class="header-btn">ジムへ入会する</a>
@@ -67,7 +65,6 @@
         <li><a href="#problems">こんな悩みありませんか？</a></li>
         <li><a href="#comparison">他社との違い</a></li>
         <li><a href="#features">選ばれる理由</a></li>
-        <li><a href="#voices">メンバーの声</a></li>
         <li><a href="#faq">よくある質問</a></li>
       </ul>
     </div>
@@ -100,7 +97,7 @@
   
     <div class="movie-container">
       <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/jsmrE_XiOfA" title="5分でわかるS-Gymのすべて" frameborder="0"
+        <iframe src="https://www.youtube.com/embed/jsmrE_XiOfA" title="5分でわかるS-Gymのすべて"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
@@ -159,10 +156,10 @@
         <thead>
           <tr>
             <th></th>
-            <th>24時間ジム<br><span style="font-size: 11px; font-weight: normal;">(完全放置)</span></th>
-            <th>大手パーソナル<br><span style="font-size: 11px; font-weight: normal;">(高額・短期)</span></th>
-            <th class="col-sphoto font-en">S-GYM<br><span
-                style="font-size: 11px; font-weight: normal; font-family: 'Noto Sans JP', sans-serif;">(コミュニティ型)</span>
+            <th>24時間ジム<br><span class="comp-note">(完全放置)</span></th>
+            <th>大手パーソナル<br><span class="comp-note">(高額・短期)</span></th>
+            <th class="col-sgym font-en">S-GYM<br><span
+                class="comp-note comp-note-ja">(コミュニティ型)</span>
             </th>
           </tr>
         </thead>
@@ -171,26 +168,26 @@
             <th>料金相場</th>
             <td>月額 8,000円〜</td>
             <td>月額 150,000円〜</td>
-            <td class="sphoto-cell" style="color: var(--primary-color); font-size: 20px; font-weight: 900;">月額 4,980円(税抜)
+            <td class="sgym-cell sgym-cell-price">月額 4,980円(税抜)
             </td>
           </tr>
           <tr>
             <th>指導・サポート</th>
             <td>全くなし</td>
             <td>マンツーマン</td>
-            <td class="sphoto-cell" style="font-weight: 900;">プロ指導＋仲間との合同トレ</td>
+            <td class="sgym-cell sgym-cell-strong">プロ指導＋仲間との合同トレ</td>
           </tr>
           <tr>
             <th>継続率（モチベ）</th>
             <td>すぐ行かなくなる</td>
             <td>期間終了でモチベ0</td>
-            <td class="sphoto-cell" style="color: var(--primary-color);">仲間がいるから<br>半永久的に続く</td>
+            <td class="sgym-cell text-primary">仲間がいるから<br>半永久的に続く</td>
           </tr>
           <tr>
             <th>得られるスキル</th>
             <td>自己流の変な癖</td>
             <td>受け身で得た身の丈に余る技術</td>
-            <td class="sphoto-cell">主体的に一人でも追い込める<br><span style="color: var(--primary-color);">「自走スキル」</span></td>
+            <td class="sgym-cell">主体的に一人でも追い込める<br><span class="text-primary">「自走スキル」</span></td>
           </tr>
         </tbody>
       </table>
@@ -262,89 +259,6 @@
     </div>
   </section>
 
-  <!-- ⑦ お客様の声セクション -->
-  <section class="voices" id="voices">
-    <div class="section-header">
-      <div class="bg-text font-en">VOICE</div>
-      <h2 class="section-title">S-Gymで人生を変えた男たち</h2>
-    </div>
-    <div class="voice-grid">
-  
-      <div class="voice-card">
-        <div class="voice-header">
-          <div class="voice-avatar"><img src="img/voice-member1.webp" alt="メンバー1"></div>
-          <div class="voice-meta">
-            <div class="voice-stars">★★★★★</div>
-            <p class="voice-user">20代 / IT営業</p>
-          </div>
-        </div>
-        <p class="voice-text">「24時間ジムに半年通っても何も変わらなかった体が、S-Gymの合同トレに参加して<span
-            class="highlight">たった2ヶ月で激変</span>しました。限界まで追い込んでくれる仲間がいる環境はチートです。」</p>
-      </div>
-  
-      <div class="voice-card">
-        <div class="voice-header">
-          <div class="voice-avatar"><img src="img/voice-member2.webp" alt="メンバー2"></div>
-          <div class="voice-meta">
-            <div class="voice-stars">★★★★★</div>
-            <p class="voice-user">30代 / エンジニア</p>
-          </div>
-        </div>
-        <p class="voice-text">「パーソナルは高すぎて手が出ませんでしたが、月額4,980円でプロにフォームを見てもらえるのは<span
-            class="highlight">価格破壊すぎます。</span>Discordで毎日の食事を見せ合うので嫌でも痩せました。」</p>
-      </div>
-  
-      <div class="voice-card">
-        <div class="voice-header">
-          <div class="voice-avatar"><img src="img/voice-member3.webp" alt="メンバー3"></div>
-          <div class="voice-meta">
-            <div class="voice-stars">★★★★★</div>
-            <p class="voice-user">20代 / 経営者</p>
-          </div>
-        </div>
-        <p class="voice-text">「経営者仲間ばかりで閉鎖的になりがちでしたが、ここでは年齢も職業も関係なく『筋肉』という共通言語で<span
-            class="highlight">熱い仲間ができました。</span>体がデカくなってマチアプの無双状態が続いてます。」</p>
-      </div>
-  
-      <div class="voice-card">
-        <div class="voice-header">
-          <div class="voice-avatar"><img src="img/voice-member4.webp" alt="メンバー4"></div>
-          <div class="voice-meta">
-            <div class="voice-stars">★★★★★</div>
-            <p class="voice-user">30代 / 公務員</p>
-          </div>
-        </div>
-        <p class="voice-text">「以前、短期のパーソナルに30万円払って痩せましたが、卒業後に見事にリバウンド。S-Gymは<span
-            class="highlight">仲間とずっと続けられる環境</span>なので、今では当時の体型を自力で超えることができました。」</p>
-      </div>
-  
-      <div class="voice-card">
-        <div class="voice-header">
-          <div class="voice-avatar"><img src="img/voice-member5.webp" alt="メンバー5"></div>
-          <div class="voice-meta">
-            <div class="voice-stars">★★★★★</div>
-            <p class="voice-user">20代 / クリエイター</p>
-          </div>
-        </div>
-        <p class="voice-text">「無料動画を見て独学でやっていましたが、関節を痛めるばかりでした。合同トレで<span
-            class="highlight">体の使い方を論理的に修正</span>してもらってから、扱う重量が跳ね上がり、一人でのトレの質も別物になりました。」</p>
-      </div>
-  
-      <div class="voice-card">
-        <div class="voice-header">
-          <div class="voice-avatar"><img src="img/voice-member6.webp" alt="メンバー6"></div>
-          <div class="voice-meta">
-            <div class="voice-stars">★★★★★</div>
-            <p class="voice-user">30代 / 会社員</p>
-          </div>
-        </div>
-        <p class="voice-text">「筋トレは孤独な作業だと思っていましたが、ここは部活みたいなノリで毎回行くのが楽しみです。一人じゃ絶対に挙がらない重さも<span
-            class="highlight">周りの『いける！』って声で挙がっちゃう</span>から不思議です。」</p>
-      </div>
-  
-    </div>
-  </section>
-
   <!-- ⑧ before→after -->
   <section class="before-after">
     <div class="section-header">
@@ -367,7 +281,7 @@
         </div>
         <div class="ba-text">
           ヒョロヒョロで頼りない印象の体が<br>
-          <span style="color: var(--primary-color);">背中を発達させたことでジャッケット負けしない体に</span>
+          <span class="text-primary">背中を発達させたことでジャッケット負けしない体に</span>
         </div>
       </div>
   
@@ -384,7 +298,7 @@
         </div>
         <div class="ba-text">
           高体脂肪の年不相応な体から−20kg！<br>
-          <span style="color: var(--primary-color);">シックスパックが見える精悍な体に</span>
+          <span class="text-primary">シックスパックが見える精悍な体に</span>
         </div>
       </div>
   
@@ -401,7 +315,7 @@
         </div>
         <div class="ba-text">
           適切な減量により<br>
-          <span style="color: var(--primary-color);">筋量を残したままスタイルアップ！</span>
+          <span class="text-primary">筋量を残したままスタイルアップ！</span>
         </div>
       </div>
   
@@ -418,7 +332,7 @@
         </div>
         <div class="ba-text">
           高体脂肪率で埋もれたフェイスラインが<br>
-          <span style="color: var(--primary-color);">4ヶ月後にははっきり見えるように！</span>
+          <span class="text-primary">4ヶ月後にははっきり見えるように！</span>
         </div>
       </div>
   
@@ -435,7 +349,7 @@
         </div>
         <div class="ba-text">
           全体的に自信が無かった姿が<br>
-          <span style="color: var(--primary-color);">適切なボディメイクで自信ある姿に！</span>
+          <span class="text-primary">適切なボディメイクで自信ある姿に！</span>
         </div>
       </div>
   
@@ -462,7 +376,10 @@
         </div>
       </div>
       <div class="flow-step">
-        <div class="flow-img"><img src="img/flow2.webp" alt="日程予約"></div>
+        <div class="flow-img flow-img--pair">
+          <img src="img/flow2.webp" alt="合同トレスケジュール">
+          <img src="img/flow2-contact.webp" alt="合同トレ参加者連絡" onerror="this.hidden=true">
+        </div>
         <div class="flow-text">
           <div class="step-label">STEP 02</div>
           <h3>合同トレの日程予約</h3>
@@ -490,13 +407,13 @@
     <div class="instructor-grid">
       <div class="instructor-card">
         <div class="instructor-img">
-          <img src="img/trainer1.webp" alt="S氏">
+          <img src="img/trainer1.webp" alt="Sちゃん">
         </div>
         <div class="instructor-info">
           <p class="instructor-role">S-Gym代表</p>
           <h3 class="instructor-name">S氏</h3>
           <ul class="instructor-desc">
-            <li>Xフォロワー1.9万人</li>
+            <li>Xフォロワー2万人</li>
             <li>格闘技経験14年</li>
             <li>恋愛コンサル累計1,000名以上を指導</li>
             <li>「体が変われば、自信が変わる。」を体現するサービスとしてS-Gymを設立</li>
@@ -560,6 +477,10 @@
       </div>
     </div>
     <div class="faq-item">
+      <div class="faq-q">月の途中で入会すると損ですか？</div>
+      <div class="faq-a">損しません。お支払いは「毎月1日」ではなく、入会した日を基準に毎月決済されます。たとえば15日に入会した場合、次回の決済は翌月15日です。なので、月初でも月末でも、いつ入会しても利用期間で損することはありません。</div>
+    </div>
+    <div class="faq-item">
       <div class="faq-q">ガリガリで恥ずかしいのですが、バカにされませんか？</div>
       <div class="faq-a">絶対にされません。運営陣も最初は細身や肥満からスタートしています。「体を変えたい」という強い意志を持つ仲間を笑う人間はS-Gymにはいません。</div>
     </div>
@@ -595,50 +516,28 @@
   </section>
 
   <!-- １２ footer -->
-  <footer
-    style="text-align: center; padding: 40px 20px; background: #111; color: #666; font-size: 12px; border-top: 1px solid #222;">
-    <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+  <footer class="site-footer">
+    <div class="site-footer-links">
       <!-- 利用規約 -->
-      <a href="terms.html" style="color: #888; text-decoration: none; transition: color 0.3s;"
-        onmouseover="this.style.color='#ff4d00'" onmouseout="this.style.color='#888'">利用規約</a>
-      <span style="color: #444;">|</span>
+      <a href="terms.html">利用規約</a>
+      <span>|</span>
   
       <!-- 特定商取引法に基づく表記 -->
-      <a href="law.html" style="color: #888; text-decoration: none; transition: color 0.3s;"
-        onmouseover="this.style.color='#ff4d00'" onmouseout="this.style.color='#888'">特定商取引法に基づく表記</a>
-      <span style="color: #444;">|</span>
+      <a href="law.html">特定商取引法に基づく表記</a>
+      <span>|</span>
   
       <!-- プライバシーポリシー -->
-      <a href="privacy.html" style="color: #888; text-decoration: none; transition: color 0.3s;"
-        onmouseover="this.style.color='#ff4d00'" onmouseout="this.style.color='#888'">プライバシーポリシー</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <span>|</span>
+
+      <!-- 運営会社 -->
+      <a href="https://esusi.co.jp/" target="_blank" rel="noopener noreferrer">運営会社</a>
     </div>
   
-    <p>&copy; 2026 S-Gym All Rights Reserved.</p>
+    <p>&copy; 2026 株式会社esusi All Rights Reserved.</p>
   </footer>
 
-  <!-- アニメーション -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const hamburger = document.getElementById('hamburger');
-      const mobileNav = document.getElementById('mobileNav');
-      const body = document.body;
-      const navLinks = document.querySelectorAll('.mobile-nav a');
-
-      hamburger.addEventListener('click', function () {
-        this.classList.toggle('is-active');
-        mobileNav.classList.toggle('is-active');
-        body.classList.toggle('no-scroll');
-      });
-
-      navLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-          hamburger.classList.remove('is-active');
-          mobileNav.classList.remove('is-active');
-          body.classList.remove('no-scroll');
-        });
-      });
-    });
-  </script>
+  <script src="js/main.js"></script>
 
 </body>
 

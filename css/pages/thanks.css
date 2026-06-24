@@ -1,0 +1,201 @@
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #f7f9fa;
+      /* 明るく清潔感のあるライトグレー */
+      color: #333;
+      /* 基本のテキストを濃いグレー（ほぼ黒）に */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .thanks-wrapper {
+      width: 100%;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+
+    .thanks-container {
+      background-color: #fff;
+      /* 白背景のカード */
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 50px 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      /* 影を優しく */
+      text-align: center;
+      border: 1px solid #eaeaea;
+      /* うっすらとしたボーダー */
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ロゴのスタイル */
+    .thanks-logo {
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      margin-bottom: 25px;
+      font-family: Arial, sans-serif;
+      color: #111;
+      /* 黒文字 */
+    }
+
+    .thanks-logo span {
+      color: #ff5722;
+      /* S-Gymオレンジ */
+    }
+
+    .thanks-title {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .thanks-desc {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      color: #555;
+      /* 読みやすいトーンのグレー */
+    }
+
+    /* 必須アクションのボックス */
+    .discord-box {
+      background-color: #fafafa;
+      /* ほんのりグレーがかった白 */
+      border: 2px solid #f0f0f0;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    .step-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #ff5722;
+      text-align: center;
+    }
+
+    .step-list {
+      padding-left: 0;
+      margin-bottom: 30px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.8;
+      font-weight: 500;
+    }
+
+    .step-list li {
+      list-style: none;
+      /* デフォルトの黒丸を消す */
+      position: relative;
+      padding-left: 1.6em;
+      margin-bottom: 12px;
+    }
+
+    /* オレンジのチェックマークを追加 */
+    .step-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #ff5722;
+      font-weight: 900;
+    }
+
+    .step-list strong {
+      color: #e64a19;
+      /* オレンジより少し濃い赤みを持たせて強調 */
+      display: inline-block;
+      margin-top: 5px;
+      background: rgba(255, 87, 34, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Discordボタン */
+    .discord-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background-color: #5865F2;
+      color: #fff;
+      text-decoration: none;
+      padding: 18px;
+      border-radius: 50px;
+      font-weight: 900;
+      font-size: 16px;
+      box-shadow: 0 6px 20px rgba(88, 101, 242, 0.3);
+      transition: all 0.3s ease;
+      margin-bottom: 25px;
+      box-sizing: border-box;
+    }
+
+    .discord-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(88, 101, 242, 0.5);
+      background-color: #4752c4;
+    }
+
+    /* 離脱防止の警告テキスト */
+    .warning-text {
+      text-align: center;
+      color: #d32f2f;
+      /* 見やすい赤 */
+      background-color: #fff5f5;
+      /* 薄い赤背景 */
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.6;
+      margin: 0;
+      border: 1px solid #ffcdd2;
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* スマホ対応 */
+    @media (max-width: 767px) {
+      .thanks-wrapper {
+        padding: 20px 15px;
+      }
+
+      .thanks-container {
+        padding: 40px 20px;
+      }
+
+      .thanks-title {
+        font-size: 20px;
+      }
+
+      .discord-box {
+        padding: 25px 15px;
+      }
+
+      .step-list {
+        font-size: 13px;
+      }
+    }

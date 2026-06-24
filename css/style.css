@@ -42,6 +42,29 @@
     border-radius: 2px;
 }
 
+.text-primary {
+    color: var(--primary-color);
+}
+
+.comp-note {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.comp-note-ja {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.sgym-cell-price {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.sgym-cell-strong {
+    font-weight: 900;
+}
+
 /* =========================================
     4. Hero Section (ファーストビュー)
 ========================================= */
@@ -54,6 +77,14 @@
     overflow: hidden;
     background-color: #111;
     padding-top: 60px;
+}
+
+.hero,
+.hero * {
+    animation: none !important;
+    transition: none !important;
+    transform: none;
+    opacity: 1;
 }
 
 .hero-bg {
@@ -84,18 +115,11 @@
     width: 100%;
     max-width: 1000px;
     text-align: center;
-    animation: fadeIn 1.5s ease-out forwards;
 }
 
-/* ★修正：好評の「白いシャドウ」復活！（黒フチ＋白光彩のハイブリッド） */
 .hero-content * {
-    text-shadow: 
-        1px 1px 0 #000, 
-        -1px -1px 0 #000,
-        1px -1px 0 #000, 
-        -1px 1px 0 #000,
-        0 4px 15px rgba(255, 255, 255, 0.7), 
-        0 0 40px rgba(255, 255, 255, 0.5);
+    text-shadow: none;
+    filter: none;
 }
 
 .hero-catch-sub {
@@ -135,11 +159,6 @@
     display: block;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 .hero-brand {
     position: relative;
     margin-top: 15px; 
@@ -151,15 +170,13 @@
     font-weight: 900;
     color: #fff;
     letter-spacing: -0.01em;
-    /* ロゴにも白い光彩を追加 */
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4)); 
+    filter: none;
     text-transform: capitalize; 
 }
 
 .hero-brand h2 span {
     color: var(--primary-color);
-    /* オレンジ文字にも同色の光彩を追加 */
-    filter: drop-shadow(0 0 10px var(--primary-color));
+    filter: none;
 }
 
 .hero-ruby {
@@ -171,43 +188,6 @@
     margin-top: 15px;
     padding-left: 5px;
 }
-
-/* =========================================
-   修正箇所1：全体のテキストシャドウ
-========================================= */
-/* ★修正：白く広がりすぎた影を抑え、重厚感のある黒シャドウへ変更 */
-.hero-content * {
-    text-shadow: 
-        1px 1px 2px rgba(0, 0, 0, 0.8), /* 輪郭を少し馴染ませる */
-        0 4px 10px rgba(0, 0, 0, 0.9),  /* 文字のすぐ裏に落ちる濃い影 */
-        0 10px 30px rgba(0, 0, 0, 0.7); /* 全体を背景に落ち着かせる影 */
-}
-
-
-/* =========================================
-   修正箇所2：ブランドロゴ（S-Gym）の影
-========================================= */
-.hero-brand h2 {
-    font-size: clamp(48px, 12vw, 100px); 
-    line-height: 0.9;
-    font-weight: 900;
-    color: #fff;
-    letter-spacing: -0.01em;
-    /* ★修正：白い光彩が浮く原因になるため、自然な黒い影に変更 */
-    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.6)); 
-    text-transform: capitalize; 
-}
-
-
-/* =========================================
-   修正箇所3：ロゴのオレンジ部分（S）の影
-========================================= */
-.hero-brand h2 span {
-    color: var(--primary-color);
-    /* ★修正：強すぎた光を抑え、オレンジ色でじんわりと馴染ませる */
-    filter: drop-shadow(0 0 15px rgba(255, 87, 34, 0.4));
-}
-
 
 /* =========================================
    5. Concept Movie (動画セクション)
@@ -381,14 +361,14 @@ th {
     color: var(--text-muted);
 }
 
-.col-sphoto {
+.col-sgym {
     color: var(--primary-color); /* 赤に変更 */
     font-size: 16px;
     background-color: #fff2f2; /* 薄い赤に変更 */
     border-bottom: 2px solid var(--primary-color) !important;
 }
 
-.sphoto-cell {
+.sgym-cell {
     background-color: #fff2f2; /* 薄い赤に変更 */
     color: var(--text-main);
     border-left: 1px solid rgba(230, 0, 18, 0.2); /* 赤のボーダー */
@@ -490,62 +470,6 @@ th {
 }
 
 /* =========================================
-   9. Voices (参加メンバーのリアルな声)
-========================================= */
-.voices {
-    padding: 80px 20px;
-    background-color: var(--bg-surface, #f9f9f9);
-}
-
-.voice-grid {
-    max-width: 1000px; margin: 0 auto;
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-.voice-card {
-    background: #fff; padding: 30px 25px; border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05); position: relative;
-    border: 1px solid #f0f0f0; transition: transform 0.3s;
-}
-
-.voice-card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08); }
-
-.voice-card::before {
-    content: '“'; position: absolute; top: 10px; left: 20px;
-    font-size: 80px; font-family: Georgia, serif;
-    color: rgba(230, 0, 18, 0.08); /* 赤色に変更 */
-    line-height: 1; z-index: 0;
-}
-
-.voice-header {
-    display: flex; align-items: center; gap: 15px; margin-bottom: 20px;
-    padding-bottom: 15px; border-bottom: 1px dashed #eee; position: relative; z-index: 1;
-}
-
-.voice-avatar {
-    width: 60px; height: 60px; border-radius: 50%; overflow: hidden;
-    background-color: #eee; flex-shrink: 0;
-}
-
-.voice-avatar img {
-    width: 100%; height: 100%; object-fit: cover;
-    filter: blur(4px) brightness(1.1); transform: scale(1.1); 
-}
-
-.voice-meta { display: flex; flex-direction: column; gap: 5px; }
-.voice-stars { color: #ffb400; font-size: 14px; letter-spacing: 2px; }
-.voice-user { font-size: 13px; font-weight: 900; color: #333; margin: 0; }
-
-.voice-text { font-size: 15px; font-weight: 500; color: #444; line-height: 1.8; position: relative; z-index: 1; margin: 0; }
-
-.voice-text .highlight {
-    font-weight: 900; color: #000;
-    /* オレンジからジム向けの赤系マーカーに変更 */
-    background: linear-gradient(transparent 50%, rgba(230, 0, 18, 0.3) 50%);
-}
-
-/* =========================================
    12. Flow (参加後の流れ)
 ========================================= */
 .contents { background-color: #fff; padding: 80px 20px; }
@@ -555,8 +479,13 @@ th {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); display: flex; flex-direction: column;
 }
 
-.flow-img { width: 100%; height: 250px; background-color: #f1f3f5; display: flex; justify-content: center; align-items: center; }
-.flow-img img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.flow-img { width: 100%; background-color: #f1f3f5; display: flex; justify-content: center; align-items: center; aspect-ratio: 16 / 9; overflow: hidden; }
+.flow-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.flow-img--pair { aspect-ratio: 16 / 10; gap: 10px; padding: 10px; background-color: #181a20; }
+.flow-img--pair img { width: calc((100% - 10px) / 2); height: 100%; object-fit: contain; object-position: center top; padding: 0; border-radius: 10px; }
+.flow-img--pair:has(img[hidden]) img:not([hidden]) { width: 100%; }
+.flow-img--phone { aspect-ratio: 9 / 16; background-color: #181a20; }
+.flow-img--phone img { object-fit: contain; object-position: center top; padding: 10px; box-sizing: border-box; }
 .flow-text { padding: 25px 20px; }
 
 .step-label {
@@ -698,18 +627,19 @@ th {
     .flow-wrap { gap: 60px; }
     .flow-step { flex-direction: row; align-items: center; background: transparent; box-shadow: none; }
     .flow-step:nth-child(even) { flex-direction: row-reverse; }
-    .flow-img { width: 45%; height: 300px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+    .flow-img { width: 45%; height: auto; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+    .flow-img--pair { width: 45%; max-height: none; }
+    .flow-img--phone { width: 36%; max-height: 560px; }
     .flow-text { width: 55%; padding: 0 40px; }
     .flow-text h3 { font-size: 22px; }
     .flow-text p { font-size: 15px; }
 
     .feature-grid { grid-template-columns: repeat(3, 1fr); }
-    .voice-grid { grid-template-columns: repeat(2, 1fr); }
     .instructor-grid { grid-template-columns: repeat(2, 1fr); }
 
     table { font-size: 16px; }
     th, td { padding: 20px 15px; }
-    .col-sphoto { font-size: 20px; }
+    .col-sgym { font-size: 20px; }
 
     .btn { display: inline-block; width: auto; padding: 20px 60px; font-size: 18px; }
     .price-box { font-size: 20px; padding: 30px 60px; }
@@ -730,7 +660,6 @@ th {
     /* スマホ表示の細かいズレ・余白修正 */
     .btn-lrg { padding: 15px 20px; font-size: 20px; }
     .btn-lrg .btn-sub { font-size: 11px; line-height: 1.4; }
-    .voice-card { padding: 25px 20px; }
     .section-title { font-size: 22px !important; line-height: 1.4; }
     .movie-catch { font-size: 18px !important; }
     .sp-br { display: block; }
@@ -948,6 +877,40 @@ th {
 body.no-scroll {
     overflow: hidden;
     height: 100%;
+}
+
+/* =========================================
+   Footer
+========================================= */
+.site-footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #111;
+    color: #666;
+    font-size: 12px;
+    border-top: 1px solid #222;
+}
+
+.site-footer-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.site-footer-links a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.site-footer-links span {
+    color: #444;
 }
 
 /* =========================================
@@ -1593,13 +1556,9 @@ body.no-scroll {
 ========================================= */
 
 .flow-img {
-    width: 50%; /* PC表示で横幅の半分を使う */
     border-radius: 16px; /* 角丸を維持 */
     overflow: hidden;
     background-color: #f5f5f5; /* 画像がない・読み込み中のグレー背景 */
-    
-    /* ★修正の肝：枠の縦横比を固定する（4:3の長方形に統一） */
-    aspect-ratio: 4 / 3; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
@@ -1607,13 +1566,47 @@ body.no-scroll {
 .flow-img img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.flow-img--pair {
+    aspect-ratio: 16 / 10;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #181a20;
+}
+
+.flow-img--pair img {
+    width: calc((100% - 10px) / 2);
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+    padding: 0;
+    border-radius: 10px;
+}
+
+.flow-img--pair:has(img[hidden]) img:not([hidden]) {
+    width: 100%;
+}
+
+.flow-img--phone {
+    aspect-ratio: 9 / 16;
+    background-color: #181a20;
+}
+
+.flow-img--phone img {
+    object-fit: contain;
+    object-position: center top;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 /* 念のためSP（スマホ）用の幅も100%に指定 */
 @media (max-width: 767px) {
     .flow-img {
         width: 100%;
-        /* スマホの時は少し高さを抑えたい場合は 16/9 などに変更してもOK */
-        aspect-ratio: 4 / 3; 
     }
 }
