@@ -375,6 +375,10 @@ th {
     border-right: 1px solid rgba(230, 0, 18, 0.2);
 }
 
+.comp-sp-wrap {
+    display: none;
+}
+
 /* =========================================
    8. Features (特徴セクション)
 ========================================= */
@@ -660,122 +664,99 @@ th {
     }
 
     .comp-table-wrap {
-        overflow: visible;
-        border-radius: 0;
-        box-shadow: none;
-        background: transparent;
-    }
-
-    .comp-table-wrap table,
-    .comp-table-wrap tbody,
-    .comp-table-wrap tr,
-    .comp-table-wrap th,
-    .comp-table-wrap td {
-        display: block;
-        width: 100%;
-        min-width: 0;
-    }
-
-    .comp-table-wrap table {
-        border-collapse: separate;
-        border-spacing: 0;
-        font-size: 14px;
-    }
-
-    .comp-table-wrap thead {
         display: none;
     }
 
-    .comp-table-wrap tbody {
-        display: grid;
-        gap: 14px;
-    }
-
-    .comp-table-wrap tr {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        border: 1px solid #ececec;
-        border-radius: 12px;
+    .comp-sp-wrap {
+        display: block;
+        max-width: 430px;
+        margin: 0 auto;
         background: #fff;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        border-radius: 2px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
     }
 
-    .comp-table-wrap th {
-        order: -2;
-        padding: 12px 16px;
-        border-bottom: 0;
-        background: #111;
-        color: #fff;
-        font-size: 15px;
+    .comp-sp-table {
+        width: 100%;
+        min-width: 0;
+        table-layout: fixed;
+        border-collapse: collapse;
         text-align: center;
-        letter-spacing: 0.04em;
+        font-size: 13px;
     }
 
-    .comp-table-wrap td {
-        display: grid;
-        grid-template-columns: 92px minmax(0, 1fr);
-        gap: 10px;
-        align-items: center;
-        padding: 11px 14px;
-        border-bottom: 1px solid #f0f0f0;
-        color: #555;
-        text-align: left;
-        font-size: 13px;
+    .comp-sp-table th,
+    .comp-sp-table td {
+        padding: 14px 8px;
+        border: 1px solid #e3e3e3;
+        font-weight: 900;
         line-height: 1.45;
+        letter-spacing: 0;
         word-break: keep-all;
         overflow-wrap: anywhere;
     }
 
-    .comp-table-wrap td::before {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 24px;
-        padding: 4px 8px;
-        border-radius: 999px;
-        background: #f1f3f5;
+    .comp-sp-table thead th {
+        background: #f1f2f4;
         color: #666;
+        font-size: 14px;
+        border-top: 0;
+    }
+
+    .comp-sp-table thead th:first-child {
+        width: 25%;
+    }
+
+    .comp-sp-table thead th:nth-child(2) {
+        width: 36%;
+    }
+
+    .comp-sp-table thead th:nth-child(3) {
+        width: 39%;
+        background: #fff5eb;
+        color: var(--primary-color);
+        border-bottom: 3px solid var(--primary-color);
+        font-size: 19px;
+        font-family: 'Oswald', 'Noto Sans JP', sans-serif;
+        letter-spacing: 0.03em;
+    }
+
+    .comp-sp-table thead span {
+        display: block;
+        margin-top: 2px;
         font-size: 11px;
-        font-weight: 900;
-        line-height: 1.2;
-        white-space: normal;
-        text-align: center;
+        font-family: 'Noto Sans JP', sans-serif;
+        letter-spacing: 0;
     }
 
-    .comp-table-wrap td:nth-of-type(1)::before {
-        content: '24時間ジム';
+    .comp-sp-table tbody th {
+        background: #f1f2f4;
+        color: #666;
+        font-size: 14px;
     }
 
-    .comp-table-wrap td:nth-of-type(2)::before {
-        content: 'パーソナル';
+    .comp-sp-table tbody td {
+        background: #fff;
+        color: #222;
+        font-size: 14px;
     }
 
-    .comp-table-wrap td:nth-of-type(3)::before {
-        content: 'S-GYM';
-    }
-
-    .comp-table-wrap .sgym-cell {
-        order: -1;
-        margin: 12px 12px 6px;
-        width: auto;
-        border: 2px solid var(--primary-color);
-        border-radius: 10px;
-        background: #fff2f2;
-        color: var(--text-main);
+    .comp-sp-table tbody td:nth-child(3) {
+        background: #fff5eb;
+        color: #222;
+        border-color: #ffd8b8;
         font-size: 15px;
-        font-weight: 900;
-        box-shadow: 0 8px 22px rgba(230, 0, 18, 0.12);
     }
 
-    .comp-table-wrap .sgym-cell::before {
-        background: var(--primary-color);
-        color: #fff;
-        letter-spacing: 0.04em;
-    }
-
-    .comp-table-wrap .sgym-cell-price {
+    .comp-sp-table tbody tr:first-child td:nth-child(3) {
+        color: var(--primary-color);
         font-size: 20px;
+        line-height: 1.25;
+    }
+
+    .comp-sp-table tbody td:nth-child(3) span {
+        color: var(--primary-color);
     }
 
     /* スマホ表示の細かいズレ・余白修正 */
